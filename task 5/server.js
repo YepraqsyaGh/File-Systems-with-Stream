@@ -15,8 +15,8 @@ const server = http.createServer((req, res) => {
 const io = socketIo(server);
 
 io.on('connection', (socket) => {
-    socket.on('chat message', (msg) => {
-        io.emit('chat message', msg);
+    socket.on('chat_message', (msg) => {        
+        io.emit('server_data', msg);
     });
 });
 
