@@ -10,9 +10,10 @@ const readJsonFile = (filePath) => {
     if (fs.existsSync(filePath)) {
       const data = fs.readFileSync(filePath, 'utf8');
       return JSON.parse(data);
-    } else {
-      return [];
     }
+    
+    return [];
+
   } catch (err) {
     console.error('Error reading file:', err);
     return [];
